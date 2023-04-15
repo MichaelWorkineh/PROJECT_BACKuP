@@ -1,6 +1,5 @@
 //project 2
 #include<iostream>
-#include<math.h>
 using namespace std;
 int main(){
 /*
@@ -69,7 +68,7 @@ for(int i =0,j=curMonth;i<13;i++,j--){
     cout<<"actual rainfall for month "<<wer<<" ("<<j<<")"<<endl;
     cin>>month[1][i];
     input[i]=wer;
-    month[2][i]=(sqrt(pow(month[1][i]-avRain,2))/avRain)*100;
+    month[2][i]=((month[1][i]-avRain)/avRain)*100;
 
 }
 a:cout<<"type \"A\" to get the actual rain fall data\ntype \"R\" to get the relative rainfall data\n";
@@ -214,9 +213,9 @@ else if(dataType=='R'||dataType=='r'){
             }
 
             if(in[j]-10>=0){
-                cout<<"|||||";
+                cout<<"||||||";
                 for(int i=0;i<in[j]-10;i+=10){
-                    cout<<"|||||||";
+                    cout<<"||||||";
                     }
                 if(deci[j]>0&&deci[j]<5){
                     cout<<"||";
@@ -225,7 +224,7 @@ else if(dataType=='R'||dataType=='r'){
                     cout<<"|||";
                     }
                 else if(deci[j]>5&&deci[j]<=9){
-                    cout<<"|||||";
+                    cout<<"||||";
                     }
                 }
                     cout<<endl<<endl;
@@ -237,7 +236,7 @@ else if(dataType=='R'||dataType=='r'){
                 cout<<"    ";
             }
             else{
-                cout<<"   ";
+                cout<<"    ";
             }
             cout<<i;
             }
