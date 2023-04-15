@@ -1,5 +1,6 @@
 //project 2
 #include<iostream>
+#include<math.h>
 using namespace std;
 int main(){
 /*
@@ -68,7 +69,7 @@ for(int i =0,j=curMonth;i<13;i++,j--){
     cout<<"actual rainfall for month "<<wer<<" ("<<j<<")"<<endl;
     cin>>month[1][i];
     input[i]=wer;
-    month[2][i]=month[1][i]-avRain;
+    month[2][i]=(sqrt(pow(month[1][i]-avRain,2))/avRain)*100;
 
 }
 a:cout<<"type \"A\" to get the actual rain fall data\ntype \"R\" to get the relative rainfall data\n";
@@ -184,7 +185,7 @@ else if(dataType=='R'||dataType=='r'){
             }
         int in[13];
         for(int i=0;i<13;i++){
-            in[i]=((int)(in1[i]/100))*100;
+            in[i]=((int)(in1[i]/10))*10;
             }
         int deci[13];
         for(int i=0;i<13;i++){
@@ -212,18 +213,18 @@ else if(dataType=='R'||dataType=='r'){
                 cout<<"";
             }
 
-            if(in[j]-500>=0){
+            if(in[j]-10>=0){
                 cout<<"|||||";
-                for(int i=0;i<in[j]-500;i+=100){
+                for(int i=0;i<in[j]-10;i+=10){
                     cout<<"|||||||";
                     }
-                if(deci[j]>0&&deci[j]<50){
+                if(deci[j]>0&&deci[j]<5){
                     cout<<"||";
                     }
-                else if (deci[j]==50){
+                else if (deci[j]==5){
                     cout<<"|||";
                     }
-                else if(deci[j]>5&&deci[j]<99){
+                else if(deci[j]>5&&deci[j]<=9){
                     cout<<"|||||";
                     }
                 }
@@ -231,8 +232,8 @@ else if(dataType=='R'||dataType=='r'){
                 }
 
         cout<<"        0";
-        for(int i=500;i<=2000;i+=100){
-            if(i<1000){
+        for(int i=10;i<=100;i+=10){
+            if(i<10){
                 cout<<"    ";
             }
             else{
@@ -245,9 +246,9 @@ else if(dataType=='R'||dataType=='r'){
 
 
     else if(dataRepresentation=='T'||dataRepresentation=='t'){
-        cout<<"---------------------------------"<<endl;
-        cout<<"|  month    | relative rainfall |"<<endl;
-        cout<<"---------------------------------"<<endl;
+        cout<<"----------------------------------"<<endl;
+        cout<<"|  month    |relative rainfall(%)|"<<endl;
+        cout<<"----------------------------------"<<endl;
         for(int j=0;j<13;j++){
             cout<<input[j];
             if(month[0][j]==5||month[0][j]==10){
@@ -264,7 +265,7 @@ else if(dataType=='R'||dataType=='r'){
             }
                 cout<<"    |     ";
             cout<<month[2][j]<<endl;
-            cout<<"---------------------------------"<<endl;
+            cout<<"----------------------------------"<<endl;
         }
     }
 }
