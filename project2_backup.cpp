@@ -192,7 +192,7 @@ else if(dataType=='R'||dataType=='r'){
         }
         cout<<endl<<endl;
         system("cls");
-        cout<<"\t\t\t\t\t\t\tactual rain fall bar graph"<<endl;
+        cout<<"\t\t\t\t\t\t\trelative rain fall bar graph"<<endl;
         cout<<"\t\t\t\t\t\t\t--------------------------"<<endl<<endl<<endl;
         for(int j=12;j>=0;j--){
             cout<<input[j];
