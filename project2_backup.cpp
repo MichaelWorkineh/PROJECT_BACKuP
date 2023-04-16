@@ -272,7 +272,7 @@ else if(dataType=='R'||dataType=='r'){
     }
 }
 
-o:cout<<"if you want to search for a specific month's information press \"s\"\nto change the data representation press \"t\"\npress \"c\" to change the data entered \npress \"q\" to leave the program\npress \"a\" to change the the data you want to see\n and do press any thing if you want to continue viewing"<<endl;
+o:cout<<"if you want to search for a specific month's information press \"s\"\nto change the data representation press \"t\"\npress \"c\" to change the data entered \npress \"q\" to leave the program\npress \"a\" to change the the data you want to see\nand do press any thing if you want to continue viewing"<<endl;
     d:cin>>menu2;
 
     switch(menu2){
